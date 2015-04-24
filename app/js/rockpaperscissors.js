@@ -4,7 +4,7 @@
 'use strict';
 
 function getInput() {
-    console.log("Please choose either 'rock', 'paper', or 'scissors'.")
+    console.log("Please choose either 'rock', 'paper', or 'scissors'.");
     return prompt();
 }
 function randomPlay() {
@@ -80,14 +80,19 @@ while (playerWins < 5 && computerWins < 5){
     var winner = getWinner(playerMove, computerMove);
     
     if (winner === 'player'){
-        playerWins += 1;    
+        playerWins += 1; 
+        console.log ("You win!");
     } 
     else if (winner === 'computer'){
         computerWins += 1;
+        console.log ("Computer wins.");
     } 
+    else{
+        console.log ("Tie game! No score.");
+    }
 
 console.log('Player chose ' + playerMove + ' while Computer chose ' + computerMove);
-    console.log('The score is currently ' + playerWins + ' to ' + computerWins + '\n');
+    console.log('Current score Player ' + playerWins + ' Computer ' + computerWins + '\n');
 
 }
 if (playerWins === 5){
@@ -98,7 +103,6 @@ else if (computerWins === 5){
 }
     return [playerWins, computerWins];
 }
-
 
 
 
